@@ -5,6 +5,8 @@
     <string name="create_new">Create New</string>
     <string name="question_hint">Enter a new question</string>
     <string name="save">SAVE</string>
+    <string name="enter_mails">Enter Emails separated with \;</string>
+    <string name="add_recipients">Add recipients :</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

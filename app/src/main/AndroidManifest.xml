@@ -16,7 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Controller.Activities.ShowQuestionnaireActivity"/>
+        <activity android:name=".Controller.Activities.ShowQuestionnaireActivity" />
+        <activity android:name=".Controller.Activities.AnswerQuestionnaireActivity" />
+        <activity android:name=".Controller.Activities.StartAnsweringActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.makeyourwonsurvey.com/answersurvey” -->
+                <data
+                    android:host="www.makeyourownsurvey.com"
+                    android:pathPrefix="/answersurvey"
+                    android:scheme="http" />
+                <!-- note that the leading "/" is required for pathPrefix-->
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

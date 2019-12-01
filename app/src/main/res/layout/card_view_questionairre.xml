@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/cardViewQuestionnaire"
+    android:layout_margin="5dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:background="@drawable/shape_for_card_view">
+        <TextView
+            android:id="@+id/surveyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_below="@+id/surveyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textSize="20dp"
+            android:paddingTop="10dp"
+            android:id="@+id/surveyQuestionsNumber"/>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

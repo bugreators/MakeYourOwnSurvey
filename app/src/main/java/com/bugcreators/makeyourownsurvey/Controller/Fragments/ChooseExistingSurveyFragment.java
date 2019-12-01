@@ -8,21 +8,31 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bugcreators.makeyourownsurvey.Controller.Activities.ShowQuestionnaireActivity;
+import com.bugcreators.makeyourownsurvey.Controller.Adapters.ShowListOfQuestionnairesAdapter;
+import com.bugcreators.makeyourownsurvey.Controller.Adapters.ShowQuestionnaireAdapter;
+import com.bugcreators.makeyourownsurvey.Model.Question;
+import com.bugcreators.makeyourownsurvey.Model.Questionairre;
+import com.bugcreators.makeyourownsurvey.Model.QuestionairreList;
 import com.bugcreators.makeyourownsurvey.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ChooseExistingSurveyFragment extends Fragment {
-    CardView cardView1;
-    CardView cardView2;
-
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private ShowListOfQuestionnairesAdapter showListOfQuestionnairesAdapter;
     public ChooseExistingSurveyFragment() {
         // Required empty public constructor
     }
@@ -38,20 +48,12 @@ public class ChooseExistingSurveyFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        cardView1 = view.findViewById(R.id.cardView1);
-        cardView2 = view.findViewById(R.id.cardView2);
-        final Intent intent = new Intent(getActivity(), ShowQuestionnaireActivity.class);
-        cardView1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
-        cardView2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(intent);
-            }
-        });
+        ArrayList<Questionairre> questionairres = QuestionairreList.getQuestionairresList();
+        recyclerView = view.findViewById(R.id.recyclerViewQuestionnaireList);
+        layoutManager = new LinearLayoutManager(getActivity());
+        showListOfQuestionnairesAdapter = new ShowListOfQuestionnairesAdapter(questionairres, getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(showListOfQuestionnairesAdapter);
+
     }
 }

@@ -42,6 +42,9 @@ public class CreateQuestionsAdapter extends RecyclerView.Adapter<CreateQuestions
                 @Override
                 public void onClick(View v) {
                     QuestionList.remove(getAdapterPosition());
+                    for (int i = 0; i < QuestionList.size(); i++) {
+                        QuestionList.get(i).setItemNumber(i+1);
+                    }
                     notifyItemRemoved(getAdapterPosition());
                     notifyItemRangeChanged(getAdapterPosition(), QuestionList.size());
                 }

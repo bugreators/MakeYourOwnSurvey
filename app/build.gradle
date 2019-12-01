@@ -31,4 +31,5 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'com.beardedhen:androidbootstrap:2.3.2'
     implementation 'com.google.android.material:material:1.2.0-alpha02'
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 }
