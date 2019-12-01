@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Controller.Fragments.ChooseExistingSurveyFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/cardView1"
+        android:layout_margin="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/shape_for_card_view">
+        <TextView
+            android:id="@+id/surveyName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEMPLATE 1"
+            android:fontFamily="serif"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_below="@+id/surveyName1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Questions: 10"
+            android:fontFamily="serif"
+            android:textSize="20dp"
+            android:paddingTop="10dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/cardView1"
+        android:layout_margin="5dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/shape_for_card_view">
+        <TextView
+            android:id="@+id/surveyName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TEMPLATE 2"
+            android:fontFamily="serif"
+            android:textSize="30dp"/>
+        <TextView
+            android:layout_below="@+id/surveyName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Questions: 30"
+            android:fontFamily="serif"
+            android:textSize="20dp"
+            android:paddingTop="10dp"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

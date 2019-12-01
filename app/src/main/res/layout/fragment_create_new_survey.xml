@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller.Fragments.CreateNewSurveyFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Main content -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewCreateQuestions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="4dp"
+            android:scrollbars="vertical" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floating_action_button"
+            style="@style/Widget.Design.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="65dp"
+            app:srcCompat="@drawable/ic_plus_24"
+            app:backgroundTint="@color/colorPrimaryDark"
+            app:elevation="100dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:layout_gravity="bottom|right"
+            android:background="@drawable/shape_rounded"
+            android:layout_marginBottom="70dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/green"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</FrameLayout>

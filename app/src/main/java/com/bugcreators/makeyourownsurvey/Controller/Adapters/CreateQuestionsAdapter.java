@@ -1,31 +1,53 @@
 package com.bugcreators.makeyourownsurvey.Controller.Adapters;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bugcreators.makeyourownsurvey.Model.Question;
 import com.bugcreators.makeyourownsurvey.R;
+import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.ArrayList;
 
 public class CreateQuestionsAdapter extends RecyclerView.Adapter<CreateQuestionsAdapter.CreateQuestionsViewHolder> {
-    private ArrayList<Question> QuestionList;
+    public ArrayList<Question> QuestionList;
 
-    public static class CreateQuestionsViewHolder extends RecyclerView.ViewHolder {
-        public TextView itemNumberTextView;
-        public EditText questionEditText;
+    public class CreateQuestionsViewHolder extends RecyclerView.ViewHolder {
+        private TextInputLayout textInputLayout;
 
         public CreateQuestionsViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemNumberTextView = itemView.findViewById(R.id.textViewItemNumberQuestion);
-            questionEditText = itemView.findViewById(R.id.editTextQuestion);
+            textInputLayout = itemView.findViewById(R.id.newQuestionTextInputLayout);
+            textInputLayout.getEditText().addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    QuestionList.get(getAdapterPosition()).setQuestionText(s.toString());
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+                }
+            });
+            textInputLayout.setEndIconOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    QuestionList.remove(getAdapterPosition());
+                    notifyItemRemoved(getAdapterPosition());
+                    notifyItemRangeChanged(getAdapterPosition(), QuestionList.size());
+                }
+            });
         }
+
     }
 
     public CreateQuestionsAdapter(ArrayList<Question> questions) {
@@ -41,15 +63,14 @@ public class CreateQuestionsAdapter extends RecyclerView.Adapter<CreateQuestions
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CreateQuestionsViewHolder holder, int position) {
-        Question question = QuestionList.get(position);
-
-        holder.itemNumberTextView.setText(question.getItemNumber());
-        holder.questionEditText.setText(question.getQuestionText());
+    public void onBindViewHolder(@NonNull CreateQuestionsViewHolder holder, final int position) {
+        final Question question = QuestionList.get(position);
+        holder.textInputLayout.getEditText().setText(question.getQuestionText());
     }
 
     @Override
     public int getItemCount() {
         return QuestionList.size();
     }
+
 }

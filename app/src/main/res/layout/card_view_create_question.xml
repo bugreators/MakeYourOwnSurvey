@@ -6,26 +6,18 @@
     android:orientation="vertical"
     app:cardCornerRadius="4dp">
 
-    <RelativeLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/newQuestionTextInputLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="4dp"
-        android:background="@drawable/shape_rounded">
+        android:layout_height="wrap_content"
+        android:hint="@string/question_hint"
+        app:endIconMode="custom"
+        app:endIconDrawable="@drawable/ic_remove_24"
+        app:endIconTint="@color/red">
 
-        <TextView
-            android:id="@+id/textViewItemNumberQuestion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="1. "
-            android:textColor="@color/black"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"/>
-        <EditText
-            android:id="@+id/editTextQuestion"
+        <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textViewItemNumberQuestion" />
-    </RelativeLayout>
+            android:layout_height="wrap_content" />
 
+    </com.google.android.material.textfield.TextInputLayout>
 </androidx.cardview.widget.CardView>

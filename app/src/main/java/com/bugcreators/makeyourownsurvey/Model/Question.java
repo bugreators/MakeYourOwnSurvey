@@ -1,15 +1,15 @@
 package com.bugcreators.makeyourownsurvey.Model;
 
 public class Question {
-    private String itemNumber;
+    private int itemNumber;
     private String questionText;
 
-    public Question(String itemNumber, String questionText) {
+    public Question(int itemNumber, String questionText) {
         this.itemNumber = itemNumber;
         this.questionText = questionText;
     }
 
-    public String getItemNumber() {
+    public int getItemNumber() {
         return itemNumber;
     }
 
@@ -17,4 +17,7 @@ public class Question {
         return questionText;
     }
 
+    public void setQuestionText(String questionText) {
+        this.questionText = questionText;
+    }
 }

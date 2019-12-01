@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/surveys"
+        android:icon="@drawable/question_circle_solid"
+        android:title="Surveys"/>
+
+    <item android:id="@+id/reports"
+        android:icon="@drawable/chart_pie_solid"
+        android:title="Reports"/>
+
+    <item android:id="@+id/recipients"
+        android:icon="@drawable/address_book_solid"
+        android:title="Recipients"/>
+</menu>
